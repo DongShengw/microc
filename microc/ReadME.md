@@ -15,7 +15,7 @@ dotnet build -v n interpc.fsproj
 # 执行解释器
 dotnet run -p interpc.fsproj ex1.c 8
 dotnet run -p interpc.fsproj -g ex1.c 8  //显示token AST 等调试信息
-
+```
 
 
 
@@ -44,7 +44,7 @@ java Machine ./example/if.out 1
 
 javac Machinetrace.java
 java Machinetrace ./example/if.out 1
-
+```
 ﻿﻿﻿# microC
 ---
 - 课程名称：编程语言原理与编译
