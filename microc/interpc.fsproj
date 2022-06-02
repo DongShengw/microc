@@ -2,7 +2,7 @@
 
 <PropertyGroup>
   <OutputType>Exe</OutputType>
-  <TargetFramework>net5.0</TargetFramework>
+  <TargetFramework>net6.0</TargetFramework>
 </PropertyGroup>
 
 <ItemGroup>
@@ -14,7 +14,7 @@
   <OtherFlags>--module CPar</OtherFlags>
 </FsYacc>
 
- 
+
 <Compile Include="Absyn.fs" />
 <Compile Include="Debug.fs" />
 <Compile Include="CPar.fs" />
@@ -40,7 +40,7 @@
 <MyItem Include="ex9.c" Args ="8"/>
 <MyItem Include="ex10.c" Args ="8"/>
 <MyItem Include="ex11.c" />
-<MyItem Include="ex12.c" /> 
+<MyItem Include="ex12.c" />
 <MyItem Include="ex13.c" />
 <MyItem Include="ex14.c" />
 <MyItem Include="ex15.c" />
@@ -57,7 +57,7 @@
 </ItemGroup>
 
 
-<Target Name="ccrun"> 
+<Target Name="ccrun">
 <Exec Command="
 echo -----------interprete------------
 dotnet run -p interpc.fsproj -g %(MyItem.FileName).c %(MyItem.Args)"
