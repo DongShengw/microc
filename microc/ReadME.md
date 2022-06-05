@@ -155,13 +155,13 @@ java Machinetrace ./example/if.out 1
 
 | 功能 | 对应文件 | 优  | 良  | 中  |
 | ---- | -------- | --- | --- | --- |
-|变量声明定义|ex(init).c|√|||
-|自增、自减|ex(selfplus).c|√|||
-|for循环|ex(for).c|√|||
-|while|ex(while).c|√|||
-|break|ex(break).c|√|||
-|continue|ex(continue).c|√|||
-|switch-case|ex(switch).c|√|||
+|变量声明定义|init.c|√|||
+|&&|&&.c|√|||
+|while|while.c|√|||
+|数组|array.c|√|||
+|if|if.c|√|||
+|==|compare.c|√|||
+|全局变量|global.c|√|||
 
 ## 小组分工
 
