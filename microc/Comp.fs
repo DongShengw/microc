@@ -142,7 +142,7 @@ let x86patch code =
     if !isX86Instr then
         code @ [ CSTI -8; MUL ] // x86 偏移地址*8
     else
-        code 
+        code
 (* ------------------------------------------------------------------- *)
 
 (* Compiling micro-C statements:
@@ -358,18 +358,18 @@ let compileToFile program fname =
 
     let instrs = cProgram program
 
-    msg <| sprintf "\nStack VM instrs:\n %A\n" instrs
+    (*msg <| sprintf "\nStack VM instrs:\n %A\n" instrs*)
 
-    writeInstr (fname + ".ins") instrs
+    (*writeInstr (fname + ".ins") instrs*)
 
     let bytecode = code2ints instrs
     msg <| sprintf "Stack VM numeric code:\n %A\n" bytecode
-    
+
     // 面向 x86 的虚拟机指令 略有差异，主要是地址偏移的计算方式不同
     // 单独生成 x86 的指令
     isX86Instr := true
     let x86instrs = cProgram program
-    writeInstr (fname + ".insx86") x86instrs
+    (*writeInstr (fname + ".insx86") x86instrs*)
 
     let x86asmlist = List.map emitx86 x86instrs
     let x86asmbody =
@@ -378,8 +378,8 @@ let compileToFile program fname =
     let x86asm =
         (x86header + beforeinit !argc + x86asmbody)
 
-    printfn $"x86 assembly saved in file:\n\t{fname}.asm"
-    File.WriteAllText(fname + ".asm", x86asm)
+    (*printfn $"x86 assembly saved in file:\n\t{fname}.asm"*)
+    (*File.WriteAllText(fname + ".asm", x86asm) *)
 
     // let deinstrs = decomp bytecode
     // printf "deinstrs: %A\n" deinstrs

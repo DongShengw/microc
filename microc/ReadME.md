@@ -1,50 +1,6 @@
-﻿
-
-## 构建与执行
-
-### A 解释器
-
-#### A.1  解释器 interpc.exe 构建
-
-```sh
-# 编译解释器 interpc.exe 命令行程序 
-dotnet restore  interpc.fsproj   
-dotnet clean  interpc.fsproj
-dotnet build -v n interpc.fsproj
-
-# 执行解释器
-dotnet run -p interpc.fsproj ex1.c 8
-dotnet run -p interpc.fsproj -g ex1.c 8  //显示token AST 等调试信息
-```
+﻿﻿﻿﻿
 
 
-
-#### B.1 microc编译器构建步骤
-
-```sh
-# 构建 microc.exe 编译器程序 
-dotnet restore  microc.fsproj 
-dotnet clean  microc.fsproj   
-dotnet build  microc.fsproj  
-
-dotnet run -p microc.fsproj example/if.c   
-dotnet run -p microc.fsproj -g example/if.c   # -g 查看调试信息
-
-
-dotnet built -t:ccrun microc.fsproj     # 编译并运行 example 目录下多个文件
-dotnet built -t:cclean microc.fsproj    # 清除生成的文件
-```
-
-
-#### D.3 Java
-
-```sh
-javac Machine.java
-java Machine ./example/if.out 1
-
-javac Machinetrace.java
-java Machinetrace ./example/if.out 1
-```
 ﻿﻿﻿# microC
 ---
 - 课程名称：编程语言原理与编译
@@ -100,30 +56,30 @@ java Machinetrace ./example/if.out 1
 - 运行解释器器
   
   ```sh
-  dotnet fsi
+  # 编译解释器 interpc.exe 命令行程序 
+  dotnet restore  interpc.fsproj   
+  dotnet clean  interpc.fsproj
+  dotnet build -v n interpc.fsproj
   
-  #r "nuget: FsLexYacc";;  //添加包引用
-  
-  #load "Absyn.fs" "Debug.fs" "CPar.fs" "CLex.fs" "Parse.fs" "Interp.fs" "ParseAndRun.fs" ;;
-  
-  open ParseAndRun;;    //导入模块 ParseAndRun
-  
-  fromFile "./test/ex1.c";;    //显示 ex1.c的语法树
-  run (fromFile "./test/ex1.c") [17];; //解释执行 ex1.c
+  # 执行解释器
+  dotnet run --project interpc.fsproj ./example/if.c 8
+  dotnet run --project interpc.fsproj ./example/if.c 8  //显示token AST 等调试信息
   ```
   
 - 运行编译器
   
   ```sh
-  dotnet fsi
+  # 构建 microc.exe 编译器程序 
+  dotnet restore  microc.fsproj 
+  dotnet clean  microc.fsproj   
+  dotnet build  microc.fsproj  
   
-  #r "nuget: FsLexYacc";;
+  dotnet run --project microc.fsproj example/if.c   
+  dotnet run --project microc.fsproj -g example/if.c   # -g 查看调试信息
   
-  #load "Absyn.fs"  "CPar.fs" "CLex.fs" "Debug.fs" "Parse.fs" "StackMachine.fs" "Backend.fs" "Comp.fs" "ParseAndComp.fs";;
   
-  //运行编译器
-  open ParseAndComp;;
-  compileToFile (fromFile "./test/ex1.c") "ex1";;  //生成机器码ex11.out
+  dotnet built -t:ccrun microc.fsproj     # 编译并运行 example 目录下多个文件
+  dotnet built -t:cclean microc.fsproj    # 清除生成的文件
   
   ```
   
@@ -134,8 +90,8 @@ java Machinetrace ./example/if.out 1
 - `java Machinetrace` 追踪堆栈变化
 例子：
 ```bash
-java Machine ex1.out 8
-java Machinetrace ex1.out 0
+java Machine ./example/if.out 1
+java Machinetrace ./example/if.out 1
 ```
 
 ## 功能实现
