@@ -53,7 +53,7 @@
 
   
   
-- 运行解释器器
+- 运行解释器
   
   ```sh
   # 编译解释器 interpc.exe 命令行程序 
@@ -95,32 +95,41 @@ java Machinetrace ./example/if.out 1
 ```
 
 ## 功能实现
-1:自加加 
-  语法树:
-    ![](./img/ex(++).jpg)
-  运行结果:
-    ![](./img/ex(++).1.jpg)
-2:自减减
-  语法树:
-  ![](./img/ex(--).jpg)
-  运行结果:
-  ![](./img/ex(--).1.jpg)
-3:break
-  语法树:
-  ![](./img/ex(break).jpg)
-  运行结果:
-  ![](./img/ex(break).1.jpg)
-4:continue
-  语法树:
-  ![](./img/ex(break).jpg)
-  运行结果:
-  ![](./img/ex(break).1.jpg)
-5:switch
-  语法树:
-  ![](./img/ex(switch).jpg)
-  运行结果:
-  ![](./img/ex(switch).1.jpg)
-
+1:数组 
+  解释器
+    ![](./img/array.png)
+  虚拟机
+    ![](./img/array-out.png)
+2:&&
+  解释器
+  ![](./img/and.png)
+  虚拟机
+  ![](./img/and-out.png)
+3:==
+  解释器
+  ![](./img/compare.png)
+  虚拟机
+  ![](./img/compare-out.png) 
+4:全局变量
+  解释器
+  ![](./img/global.png)
+  虚拟机
+  ![](./img/global-out.png)
+5:if
+  解释器
+  ![](./img/if.png)
+  虚拟机
+  ![](./img/if-out.png)
+6:初始化
+  解释器
+  ![](./img/init.png)
+  虚拟机
+  ![](./img/init-out.png)
+7:while
+  解释器
+  ![](./img/while.png)
+  虚拟机
+  ![](./img/while-out.png)
 ## 心得体会
 - 余溢轩：  
   本学期的编译原理大作业，对我而言有难度，需要投入大量的时间去学习，了解本质的东西。但这完成大作业的过程，我对编译原理课程的认识更加深刻，掌握的东西也更加多了。
